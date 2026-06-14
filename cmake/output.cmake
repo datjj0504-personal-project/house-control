@@ -1,0 +1,20 @@
+
+set(MY_PROJECT_BUILD_TYPE unknown)
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+	set(MY_PROJECT_BUILD_TYPE debug)
+elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
+	set(MY_PROJECT_BUILD_TYPE release)
+elseif(CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
+	set(MY_PROJECT_BUILD_TYPE relwithdebinfo)
+elseif(CMAKE_BUILD_TYPE STREQUAL "MinSizeRel")
+	set(MY_PROJECT_BUILD_TYPE minsizerel)
+else()
+	message(WARNING "Unknown build type: ${CMAKE_BUILD_TYPE}")
+endif()
+
+set(MY_OUTPUT_DIR build)
+
+message("Output directory: ${MY_OUTPUT_DIR}/${MY_PROJECT_BUILD_TYPE}")
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/${MY_OUTPUT_DIR}/${MY_PROJECT_BUILD_TYPE})
+
