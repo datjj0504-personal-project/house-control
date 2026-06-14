@@ -1,0 +1,13 @@
+{
+	"description": "Log configuration for the application",
+	"version": "1.0.0",
+	"profile": [
+		{
+			"enabled": true,
+			"id": "",
+			"name": "Server",
+			"description": "Logs related to server operations",
+			"level": 1
+		}
+	]
+}
